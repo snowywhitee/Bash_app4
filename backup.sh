@@ -3,7 +3,7 @@
 #Set constants
 NOW=$(date "+%F")
 NOW_SECONDS=$(date -d "$NOW" +%s)
-BACKUP_DATE=$(ls ~ | grep -o -E "^Backup-[0-9]{4}-[0-9]{4}-[0-9]{4}" | cut -d "-" -f 2,3,4 | sort -n -r | head -n 1)
+BACKUP_DATE=$(ls ~ | grep -o -E "^Backup-[0-9]{4}-[0-9]{2}-[0-9]{2}" | cut -d "-" -f 2,3,4 | sort -n -r | head -n 1)
 BACKUP_SECONDS=$(date -d "$BACKUP_dATE" +%s)
 ELAPSED_dAYS=$(echo "($NOW_SECONDS - $BACKUP_SECONDS)/(60*60*24)" | bc -l)
 
